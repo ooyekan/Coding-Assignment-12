@@ -27,6 +27,10 @@ const StyledButton = styled.button<StyledButtonProps>`
   }
 `;
 
+export function sum(a: number, b: number) {
+  return a + b;
+ }
+
 const MyButton = ({ disabled = false, label = "I'm a button", backgroundColor, hidden  }: MyButtonProps) => {
   return (
     <StyledButton disabled={disabled} backgroundColor={backgroundColor} hidden={hidden}>
@@ -34,5 +38,7 @@ const MyButton = ({ disabled = false, label = "I'm a button", backgroundColor, h
     </StyledButton>
   );
 };
+
+
 
 export default MyButton;
