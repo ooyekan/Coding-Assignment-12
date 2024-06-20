@@ -10,17 +10,22 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test:jest": "jest",
+    "test:storybook": "test-storybook",
+    "test": "npm run test:jest && npm run test:storybook"
   },
   "jest": {
-   "transform": {
-     "^.+\\.(t|j)sx?$": "babel-jest"
-   },
-   "moduleNameMapper": {
-     ".(css|less|scss)$": "identity-obj-proxy"
-   },
-   "modulePathIgnorePatterns": ["node_modules", "jest-test-results.json"]
- },
+    "transform": {
+      "^.+\\.(t|j)sx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      ".(css|less|scss)$": "identity-obj-proxy"
+    },
+    "modulePathIgnorePatterns": [
+      "node_modules",
+      "jest-test-results.json"
+    ]
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -41,6 +46,7 @@
     "@storybook/react": "^8.1.5",
     "@storybook/react-vite": "^8.1.5",
     "@storybook/test": "^8.1.5",
+    "@storybook/test-runner": "^0.18.2",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^29.5.12",

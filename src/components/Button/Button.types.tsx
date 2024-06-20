@@ -3,4 +3,5 @@ export interface MyButtonProps {
     label?: string;
     hidden?: boolean;
     backgroundColor?: string;
+    'data-testid'?: string;
 }

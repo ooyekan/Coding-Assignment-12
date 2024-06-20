@@ -1,6 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
 import MyButton from './Button';
 import { MyButtonProps } from './Button.types';
+import { userEvent, within } from '@storybook/test';
 
 
 export default {
@@ -29,11 +30,17 @@ export default {
   const Template: StoryFn<MyButtonProps> = (args) => <MyButton {...args} />;
   
   export const Default = Template.bind({});
-Default.args = {
+  Default.args = {
   disabled: false,
   hidden: false,
   label: 'I\'m a button',
   backgroundColor: 'transparent',
+  'data-testid': 'TestButton'
+};
+
+Default.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByTestId('TestButton'));
 };
 
 export const Disabled = Template.bind({});

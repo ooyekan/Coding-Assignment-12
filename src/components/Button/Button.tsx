@@ -5,6 +5,7 @@ interface StyledButtonProps {
   disabled?: boolean;
   hidden?: boolean;
   backgroundColor?: string;
+  'data-testid'?: string;
 }
 
 // Define a styled button component
@@ -31,9 +32,9 @@ export function sum(a: number, b: number) {
   return a + b;
  }
 
-const MyButton = ({ disabled = false, label = "I'm a button", backgroundColor, hidden  }: MyButtonProps) => {
+const MyButton = ({ disabled = false, label = "I'm a button", backgroundColor, hidden, 'data-testid': dataTestId}: MyButtonProps) => {
   return (
-    <StyledButton disabled={disabled} backgroundColor={backgroundColor} hidden={hidden}>
+    <StyledButton disabled={disabled} backgroundColor={backgroundColor} hidden={hidden} data-testid={dataTestId}>
       {label}
     </StyledButton>
   );
