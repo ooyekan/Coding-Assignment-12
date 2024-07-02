@@ -31,9 +31,9 @@ const Image = styled.img`
   height: auto;
 `;
 
-const HeroImage = ({ src = heroImage, alt, disabled, hidden,
+const HeroImage = ({ src = heroImage, alt, disabled, hidden, onClick,
   backgroundColor, }: HeroImageProps) => (
-  <ImageWrapper disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} data-testid="heroimage-component">
+  <ImageWrapper disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} onClick={!disabled ? onClick : undefined} data-testid="heroimage-component">
     <Image src={src} alt={alt} />
   </ImageWrapper>
 );

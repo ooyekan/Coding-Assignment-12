@@ -7,5 +7,6 @@ export interface HeroImageProps {
     hidden?: boolean;
     backgroundColor?: string;
     'data-testid'?: string;
+    onClick?: () => void;
   };
   

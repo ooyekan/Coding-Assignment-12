@@ -5,5 +5,6 @@ export interface HeaderProps {
     backgroundColor?: string;
     hidden?: boolean;
     'data-testid'?: string;
+    onClick?: () => void;
   };
   
