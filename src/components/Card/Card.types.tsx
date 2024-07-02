@@ -8,5 +8,6 @@ export interface CardProps {
     description?: string;
     imageUrl?: string;
     backgroundColor?: string;
+    'data-testid'?: string;
   };
   

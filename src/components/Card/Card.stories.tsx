@@ -28,20 +28,16 @@ Default.args = {
   imageSrc: cardImage,
   hidden: false,
   backgroundColor: 'transparent',
+  'data-testid': 'card-component'
 
 };
 
 Default.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByTestId('card-container'));
+  await userEvent.click(canvas.getByTestId('card-component'));
   // Add assertions for interaction here if needed
 };
 
-Default.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByTestId('card-container'));
-  // Add assertions for interaction here if needed
-};
 
 export const Disabled: StoryFn<CardProps> = Template.bind({});
 Disabled.args = {
@@ -52,11 +48,12 @@ Disabled.args = {
   disabled: true,
   hidden: false,
   backgroundColor: '#ccc',
+  'data-testid': 'card-component'
 };
 
 Disabled.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByTestId('card-container'));
+  await userEvent.click(canvas.getByTestId('card-component'));
   // Add assertions for interaction here if needed
 };
 
@@ -72,10 +69,11 @@ Hidden.args = {
   disabled: false,
   hidden: true,
   backgroundColor: 'transparent',
+  'data-testid': 'card-component'
 };
 
 Hidden.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByTestId('card-container'));
+  await userEvent.click(canvas.getByTestId('card-component'));
   // Add assertions for interaction here if needed
 };
