@@ -49,10 +49,25 @@ Disabled.args = {
   hidden: false,
   label: 'I\'m a button',
   backgroundColor: '#ccc',
+  'data-testid': 'TestButton'
+};
+
+Disabled.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  // Clicking on a disabled button should not trigger any action
+  await userEvent.click(canvas.getByTestId('TestButton'));
 };
 
 export const Hidden = Template.bind({});
 Hidden.args = {
   hidden: true,
   label: "I'm a hidden button",
+  'data-testid': 'TestButton'
+};
+
+Hidden.play = async ({ canvasElement }) => {
+  // Adjust test logic for hidden state interaction if needed
+  const canvas = within(canvasElement);
+  // Example: Clicking on a hidden button should not be possible or have different behavior
+  await userEvent.click(canvas.getByTestId('TestButton'));
 };

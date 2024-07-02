@@ -1,6 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
 import Card from './Card';
 import { CardProps } from './Card.types';
+import { userEvent, within } from '@storybook/test';
 import cardImage from '../../assets/images/card_image.png';
 
 export default {
@@ -30,6 +31,18 @@ Default.args = {
 
 };
 
+Default.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByTestId('card-container'));
+  // Add assertions for interaction here if needed
+};
+
+Default.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByTestId('card-container'));
+  // Add assertions for interaction here if needed
+};
+
 export const Disabled: StoryFn<CardProps> = Template.bind({});
 Disabled.args = {
   title: 'Disabled Card Title',
@@ -41,6 +54,14 @@ Disabled.args = {
   backgroundColor: '#ccc',
 };
 
+Disabled.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByTestId('card-container'));
+  // Add assertions for interaction here if needed
+};
+
+
+
 export const Hidden = Template.bind({});
 Hidden.args = {
   title: 'Hidden Card Title',
@@ -51,4 +72,10 @@ Hidden.args = {
   disabled: false,
   hidden: true,
   backgroundColor: 'transparent',
+};
+
+Hidden.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByTestId('card-container'));
+  // Add assertions for interaction here if needed
 };

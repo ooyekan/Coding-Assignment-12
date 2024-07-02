@@ -33,7 +33,7 @@ const Image = styled.img`
 
 const HeroImage = ({ src = heroImage, alt, disabled, hidden,
   backgroundColor, }: HeroImageProps) => (
-  <ImageWrapper disabled={disabled} hidden={hidden} backgroundColor={backgroundColor}>
+  <ImageWrapper disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} data-testid="heroimage-component">
     <Image src={src} alt={alt} />
   </ImageWrapper>
 );

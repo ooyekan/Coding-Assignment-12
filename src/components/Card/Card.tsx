@@ -51,7 +51,7 @@ const Card = ({
   description,
   backgroundColor,
 }: CardProps) => (
-  <CardContainer disabled={disabled} hidden={hidden} backgroundColor={backgroundColor}>
+  <CardContainer data-testid="card-container" disabled={disabled} hidden={hidden} backgroundColor={backgroundColor}>
     {imageSrc && <Image src={cardImage} alt={description} />}
     <Content>
       <Title>{title}</Title>

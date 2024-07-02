@@ -23,7 +23,7 @@ const StyledText = styled.p<StyledTextProps>`
 
 const MyText = ({ disabled = false, text = "Default text", bold = false, hidden, backgroundColor, }: MyTextProps) => {
   return (
-    <StyledText disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} bold={bold}>
+    <StyledText disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} bold={bold} data-testid="text-component">
       {text}
     </StyledText>
     

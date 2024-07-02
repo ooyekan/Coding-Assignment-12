@@ -4,5 +4,6 @@ export interface DropdownProps {
     onSelect: (option: string) => void;
     hidden?: boolean;
     backgroundColor?: string;
+    'data-testid'?: string;
   }
   

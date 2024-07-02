@@ -4,5 +4,6 @@ export interface MyTextProps {
     bold?: boolean;
     hidden?: boolean;
     backgroundColor?: string;
+    'data-testid'?: string;
   }
   

@@ -4,5 +4,6 @@ export interface HeaderProps {
     disabled? : boolean;
     backgroundColor?: string;
     hidden?: boolean;
+    'data-testid'?: string;
   };
   
