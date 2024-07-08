@@ -12,7 +12,7 @@ test('adds 1 + 2 to equal 3', () => {
 
  describe('Button component', () => {
   it('renders the button with the correct label', () => {
-    const label = 'Click me';
+    const label = 'I\'m a button';
     const { getByText } = render(<MyButton label={label} />);
     const buttonElement = getByText(label);
     expect(buttonElement).toBeInTheDocument();
@@ -20,7 +20,7 @@ test('adds 1 + 2 to equal 3', () => {
 
   it('calls the onClick handler when clicked', () => {
     const handleClick = jest.fn();
-    const label = 'Click me';
+    const label = 'I\'m a button';
     const { getByText } = render(<MyButton onClick={handleClick} label={label} />);
     const buttonElement = getByText(label);
 
