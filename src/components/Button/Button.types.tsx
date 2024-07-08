@@ -4,4 +4,5 @@ export interface MyButtonProps {
     hidden?: boolean;
     backgroundColor?: string;
     'data-testid'?: string;
+    onClick?: () => void;
 }

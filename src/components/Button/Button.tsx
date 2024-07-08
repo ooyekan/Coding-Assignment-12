@@ -32,9 +32,9 @@ export function sum(a: number, b: number) {
   return a + b;
  }
 
- const MyButton = ({ 'data-testid': dataTestId = 'MyButton', disabled = false, label = "I'm a button", backgroundColor, hidden }: MyButtonProps) => {
+ const MyButton = ({ 'data-testid': dataTestId = 'MyButton', disabled = false, label = "I'm a button", backgroundColor, hidden, onClick }: MyButtonProps) => {
   return (
-    <StyledButton disabled={disabled} backgroundColor={backgroundColor} hidden={hidden} data-testid={dataTestId}>
+    <StyledButton disabled={disabled} backgroundColor={backgroundColor} hidden={hidden} data-testid={dataTestId} onClick={!disabled ? onClick : undefined}>
       {label}
     </StyledButton>
   );
