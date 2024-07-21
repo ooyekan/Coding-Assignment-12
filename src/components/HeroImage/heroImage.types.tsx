@@ -6,5 +6,7 @@ export interface HeroImageProps {
     disabled? :  boolean;
     hidden?: boolean;
     backgroundColor?: string;
+    'data-testid'?: string;
+    onClick?: () => void;
   };
   

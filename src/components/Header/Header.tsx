@@ -30,8 +30,8 @@ const HeaderSubtitle = styled.h2`
   color: #999;
 `;
 
-  const Header = ({ title, subtitle, disabled, backgroundColor, hidden }: HeaderProps) => (
-  <HeaderWrapper disabled={disabled} backgroundColor={backgroundColor} hidden={hidden}>
+  const Header = ({ title, subtitle, disabled, backgroundColor, onClick, hidden }: HeaderProps) => (
+  <HeaderWrapper disabled={disabled} backgroundColor={backgroundColor} onClick={!disabled ? onClick : undefined} hidden={hidden} data-testid="header-component">
     <HeaderTitle>{title}</HeaderTitle>
     {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>}
   </HeaderWrapper>

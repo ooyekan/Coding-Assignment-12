@@ -28,7 +28,13 @@ const Dropdown = ({ options, onSelect, disabled, hidden, backgroundColor }: Drop
   };
 
   return (
-    <Select onChange={handleSelect} disabled={disabled} hidden={hidden} backgroundColor={backgroundColor}>
+    <Select
+      onChange={handleSelect}
+      disabled={disabled}
+      hidden={hidden}
+      backgroundColor={backgroundColor}
+      data-testid="dropdown-component"
+    >
       {options.map((option, index) => (
         <option key={index} value={option}>
           {option}
@@ -37,5 +43,4 @@ const Dropdown = ({ options, onSelect, disabled, hidden, backgroundColor }: Drop
     </Select>
   );
 };
-
 export default Dropdown;
