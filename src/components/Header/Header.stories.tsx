@@ -2,6 +2,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { userEvent, within } from '@storybook/test';
 import Header from './Header';
 import { HeaderProps } from './Header.types';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
   title: 'ReactComponentLibrary/Header',
@@ -13,7 +14,11 @@ export default {
   },
 } as Meta<typeof Header>;
 
-const Template: StoryFn<HeaderProps> = (args) => <Header {...args} />;
+const Template: StoryFn<HeaderProps> = (args) => (
+  <Router>
+    <Header {...args} />
+  </Router>
+);
 
 export const Default = Template.bind({});
 Default.args = {

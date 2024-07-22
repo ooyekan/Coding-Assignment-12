@@ -1,3 +1,24 @@
+// // import React from 'react';
+// // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// // import Home from '../Pages/Home/Home';
+// // import About from '../Pages/About/About';
+// // import Projects from '../Pages/Projects/Projects';
+// // import Contact from '../Pages/Contact/Contact';
+
+// // const App: React.FC = () => (
+// //   <Router>
+// //     <Switch>
+// //       <Route exact path="/" component={Home} />
+// //       <Route path="/about" component={About} />
+// //       <Route path="/projects" component={Projects} />
+// //       <Route path="/contact" component={Contact} />
+// //     </Switch>
+// //   </Router>
+// // );
+
+// // export default App;
+
+
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
@@ -59,22 +80,3 @@
 
 // export default App
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Pages/Home/Home';
-import About from './Pages/About/About';
-import Projects from './Pages/Projects/Projects';
-import Contact from './Pages/Contact/Contact';
-
-const App: React.FC = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  </Router>
-);
-
-export default App;

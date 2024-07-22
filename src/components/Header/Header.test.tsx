@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import Header from './Header';
 import { HeaderProps } from './Header.types';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 global.React = React;
 
@@ -19,7 +20,11 @@ describe('Header Component', () => {
       onClick: jest.fn(),  // Default onClick handler
       ...props,
     };
-    return render(<Header {...defaultProps} />);
+    return render(
+      <Router>  // Wrap with Router
+        <Header {...defaultProps} />
+      </Router>
+    );
   };
 
   test('renders with default props', () => {

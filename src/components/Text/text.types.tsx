@@ -5,5 +5,7 @@ export interface MyTextProps {
     hidden?: boolean;
     backgroundColor?: string;
     'data-testid'?: string;
+    size?: 'small' | 'medium' | 'large';
+    children: React.ReactNode;
   }
   

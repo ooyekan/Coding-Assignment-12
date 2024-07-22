@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { MyTextProps } from "./text.types";
 
 interface StyledTextProps {
+  size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   hidden?: boolean;
   backgroundColor?: string;
@@ -21,10 +22,10 @@ const StyledText = styled.p<StyledTextProps>`
 
 `;
 
-const MyText = ({ disabled = false, text = "Default text", bold = false, hidden, backgroundColor, }: MyTextProps) => {
+const MyText = ({ disabled = false, text = "Default text", bold = false, hidden, backgroundColor, size = 'medium', children }: MyTextProps) => {
   return (
-    <StyledText disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} bold={bold} data-testid="text-component">
-      {text}
+    <StyledText disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} bold={bold} size={size} data-testid="text-component">
+      {text}  {children}
     </StyledText>
     
   );

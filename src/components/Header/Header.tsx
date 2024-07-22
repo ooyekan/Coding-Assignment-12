@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 import { HeaderProps } from './Header.types';
+import Logo from '../Logo/Logo';
+import NavigationBar from '../NavigationBar/NavigationBar';
 
 interface StyledHeaderProps {
     disabled?: boolean;
@@ -7,9 +9,10 @@ interface StyledHeaderProps {
     hidden?: boolean;
   }
 const HeaderWrapper = styled.header<StyledHeaderProps>`
-  text-align: center;
-  padding: 16px;
-  background-color: ${(props) => (props.disabled ? '#ccc' : props.backgroundColor || '#f5f5f5')};
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: ${(props) => (props.disabled ? '#ccc' : props.backgroundColor || '#282c34')};
   
   ${(props) =>
     props.hidden &&
@@ -33,7 +36,8 @@ const HeaderSubtitle = styled.h2`
   const Header = ({ title, subtitle, disabled, backgroundColor, onClick, hidden }: HeaderProps) => (
   <HeaderWrapper disabled={disabled} backgroundColor={backgroundColor} onClick={!disabled ? onClick : undefined} hidden={hidden} data-testid="header-component">
     <HeaderTitle>{title}</HeaderTitle>
-    {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>}
+    {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>} <Logo />
+    <NavigationBar />
   </HeaderWrapper>
 );
 
