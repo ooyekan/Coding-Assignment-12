@@ -11,7 +11,7 @@ global.React = React;
 describe('Header Component', () => {
   const renderComponent = (props: Partial<HeaderProps> = {}) => {
     const defaultProps: HeaderProps = {
-      title: 'Header Title',
+      title: 'MY PORTFOLIO',
       subtitle: 'Header Subtitle',
       disabled: false,
       hidden: false,
@@ -29,14 +29,14 @@ describe('Header Component', () => {
 
   test('renders with default props', () => {
     renderComponent();
-    expect(screen.getByText('Header Title')).toBeInTheDocument();
+    expect(screen.getByText('MY PORTFOLIO')).toBeInTheDocument();
     expect(screen.getByText('Header Subtitle')).toBeInTheDocument();
     expect(screen.getByTestId('logo-component')).toBeInTheDocument();
   });
 
   test('renders without subtitle', () => {
     renderComponent({ subtitle: undefined });
-    expect(screen.getByText('Header Title')).toBeInTheDocument();
+    expect(screen.getByText('MY PORTFOLIO')).toBeInTheDocument();
     expect(screen.queryByText('Header Subtitle')).not.toBeInTheDocument();
     expect(screen.getByTestId('logo-component')).toBeInTheDocument();
   });
