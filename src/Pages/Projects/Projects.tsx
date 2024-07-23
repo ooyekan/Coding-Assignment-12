@@ -1,31 +1,96 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
+import styled from 'styled-components';
 
 const projects = [
-  { title: 'Project One', description: 'Description for project one', link: '#' },
-  { title: 'Project Two', description: 'Description for project two', link: '#' },
-  { title: 'Project Three', description: 'Description for project three', link: '#' },
+  { title: 'CMS', description: 'A robust CMS designed to simplify content creation and management for websites, providing an intuitive interface for users to publish and edit content effortlessly.', link: '#', imageSrc: 'src/assets/images/cardImage1.png' },
+  { title: 'Portfolio', description: 'A dynamic portfolio website showcasing your work and skills with a visually appealing design, allowing visitors to explore your projects and achievements.', link: '#', imageSrc: 'src/assets/images/cardImage2.png' },
+  { title: 'E-Commerce', description: 'A comprehensive e-commerce platform offering seamless online shopping experiences, complete with product listings, shopping cart functionality, and secure checkout options.', link: '#', imageSrc: 'src/assets/images/cardImage3.png' },
 ];
 
+const Container = styled.div`
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ProjectsSection = styled.section`
+  width: 100%;
+  padding: 2rem;
+  background-color: #2A2B32;
+`;
+
+const ProjectsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem; /* Space between cards */
+  justify-content: center; /* Center cards horizontally */
+`;
+
+const CardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; /* Set a max-width for better spacing */
+`;
+
+const Title = styled.h2`
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+`;
+
+const ProjectTitle = styled.h3`
+  margin-top: 0.5rem;
+  font-size: 0.45rem;
+  color: #fff;
+  text-align: center;
+`;
+
+const ProjectDescription = styled.p`
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+`;
+
+const ProjectLink = styled.a`
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+  
+  &:hover {
+    color: #FF60CB; /* Change color on hover */
+  }
+`;
+
 const Projects: React.FC = () => (
-  <>
+  <Container>
     <Header title={''} />
-    <section>
-      <h2>Projects</h2>
-      <div style={{ 
-      display: 'flex', 
-      flexDirection: 'row', 
-      flexWrap: 'wrap', 
-      gap: '1rem', 
-      padding: '1rem 0'
-    }}>
-      {projects.map((project, index) => (
-        <Card content={''} key={index} {...project} size="large"/>
-      ))}
-      </div>
-    </section>
-  </>
+    <ProjectsSection>
+      <Title>Projects</Title>
+      <ProjectsContainer>
+        {projects.map((project, index) => (
+          <CardWrapper key={index}>
+            <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">
+              <Card
+                content={''}
+                imageSrc={project.imageSrc}
+                link={project.link}
+                size="large"
+                title={''}
+              />
+              <ProjectTitle>{project.title}</ProjectTitle>
+              <ProjectDescription>{project.description}</ProjectDescription>
+            </ProjectLink>
+          </CardWrapper>
+        ))}
+      </ProjectsContainer>
+    </ProjectsSection>
+  </Container>
 );
 
 export default Projects;

@@ -6,4 +6,5 @@ export interface MyButtonProps {
     'data-testid'?: string;
     onClick?: () => void;
     children?: React.ReactNode;
+    to?: string;
 }

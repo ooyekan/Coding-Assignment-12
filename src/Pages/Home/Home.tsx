@@ -8,9 +8,9 @@ import styled from 'styled-components';
 
 
 const projects = [
-  {  description: 'Description for project one', link: '#' },
-  { description: 'Description for project two', link: '#' },
-  { description: 'Description for project three', link: '#' },
+  { title: 'CMS', description: 'Description for project one', link: '#', imageSrc: 'src/assets/images/cardImage1.png' },
+  { title: 'Portfolio', description: 'Description for project two', link: '#', imageSrc: 'src/assets/images/cardImage2.png' },
+  { title: 'E-Commerce', description: 'Description for project three', link: '#', imageSrc: 'src/assets/images/cardImage3.png' },
 ];
 
 const Container = styled.div`
@@ -80,7 +80,23 @@ const ProjectsContainer = styled.section`
   
 `;
 
+const ProjectLink = styled.a`
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+  
+  &:hover {
+    color: #FF60CB; /* Change color on hover */
+  }
+`;
 
+const HeaderLink = styled.a`
+  color: #fff; /* White color for the link text */
+  text-decoration: none; /* Remove underline */
+  
+  &:hover {
+    color: #FFC0CB; /* Change color on hover */ 
+  }
+`;
 
 
 const Home: React.FC = () => (
@@ -100,21 +116,26 @@ const Home: React.FC = () => (
       {/* MyButton Component */}
       <ButtonContainer>
         <MyText  size = "medium" >ABOUT ME<br></br>I am a student of the Full Stack Web <br></br>Development program at  Red River<br></br> College Polytechnic</MyText>
-        <MyButton onClick={() => console.log('Button clicked')}>Learn More</MyButton>
+        <MyButton to="/about">Learn More</MyButton>
       </ButtonContainer>
     </InfoSection>
 
     {/* Section for Projects */}
     <ProjectsSection>
-      <h2>Projects</h2>
+    <h2><HeaderLink href="/projects">Projects</HeaderLink></h2>
       <ProjectsContainer>
         {projects.map((project, index) => (
+          <ProjectLink href={project.link} key={index}>
           <Card
             key={index}
+            title={project.title}
             description={project.description}
             link={project.link}
+            imageSrc={project.imageSrc}
             content={''}
-            size="small" title={''}          />
+            size="small" 
+            />
+            </ProjectLink>
         ))}
       </ProjectsContainer>
     </ProjectsSection>

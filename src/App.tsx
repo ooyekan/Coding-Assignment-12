@@ -66,6 +66,7 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Projects from './Pages/Projects/Projects';
 import Contact from './Pages/Contact/Contact';
+import Resume from './Pages/Resume/Resume';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import IMG from './components/IMG/IMG'
@@ -86,8 +87,7 @@ const AdditionalImage = styled(IMG)`
 
 const App: React.FC = () => (
   <Router>
-    <Header
-      title="My Website"
+    <Header title={''}
     />
     
     <main className="main-content">
@@ -96,6 +96,7 @@ const App: React.FC = () => (
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/resume"  element={<Resume />} />
     </Routes>
     {/* <div className="additional-components">
         <Card title="Sample Card" description="This is a sample card description" content={''} />

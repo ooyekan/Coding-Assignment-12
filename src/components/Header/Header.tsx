@@ -61,14 +61,14 @@ const HeaderSubtitle = styled.h2`
   text-align: center;
 `;
 
-const Header = ({ title, subtitle, disabled, backgroundColor, onClick, hidden }: HeaderProps) => (
+const Header = ({ subtitle, disabled, backgroundColor, onClick, hidden }: HeaderProps) => (
   <HeaderWrapper disabled={disabled} backgroundColor={backgroundColor} onClick={!disabled ? onClick : undefined} hidden={hidden} data-testid="header-component">
     <LogoWrapper>
       <Logo />
     </LogoWrapper>
     <TitleWrapper>
       <div>
-        <HeaderTitle>{title}</HeaderTitle>
+        <HeaderTitle>MY PORTFOLIO</HeaderTitle>
         {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>}
       </div>
     </TitleWrapper>

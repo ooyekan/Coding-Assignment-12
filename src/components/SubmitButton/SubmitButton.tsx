@@ -11,6 +11,7 @@ const StyledSubmitButton = styled.button<SubmitButtonProps>`
   border-radius: 5px;
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  width: 90px;
 `;
 
 const SubmitButton: React.FC<SubmitButtonProps> = ({ disabled = false, children , onClick}) => (

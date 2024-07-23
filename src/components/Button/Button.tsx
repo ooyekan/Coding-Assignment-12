@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { MyButtonProps } from "./Button.types";
+import { Link } from "react-router-dom";
 
 interface StyledButtonProps {
   disabled?: boolean;
   hidden?: boolean;
   backgroundColor?: string;
   'data-testid'?: string;
+  to?: string;
 }
 
 // Define a styled button component
@@ -32,10 +34,31 @@ export function sum(a: number, b: number) {
   return a + b;
  }
 
- const MyButton = ({ 'data-testid': dataTestId = 'MyButton', disabled = false, label = "I'm a button", backgroundColor, hidden, onClick, children }: MyButtonProps) => {
+ const MyButton = ({ 'data-testid': dataTestId = 'MyButton', disabled = false, label = "I'm a button", backgroundColor, hidden, onClick, to, children }: MyButtonProps) => {
+  if (to) {
+    return (
+      <Link to={to} style={{ textDecoration: 'none' }}>
+        <StyledButton
+          disabled={disabled}
+          backgroundColor={backgroundColor}
+          hidden={hidden}
+          data-testid={dataTestId}
+        >
+          {children || label}
+        </StyledButton>
+      </Link>
+    );
+  }
+
   return (
-    <StyledButton disabled={disabled} backgroundColor={backgroundColor} hidden={hidden} data-testid={dataTestId} onClick={!disabled ? onClick : undefined}>
-      {children || label} {/* Render children or label */}
+    <StyledButton
+      disabled={disabled}
+      backgroundColor={backgroundColor}
+      hidden={hidden}
+      data-testid={dataTestId}
+      onClick={!disabled ? onClick : undefined}
+    >
+      {children || label}
     </StyledButton>
   );
 };

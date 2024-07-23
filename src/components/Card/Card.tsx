@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { CardProps } from './Card.types';
-import cardImage from '../../assets/images/card_image.png'; // Import your image
+// import cardImage from '../../assets/images/card_image.png'; // Import your image
 
 interface StyledCardProps {
   disabled?: boolean;
@@ -14,8 +14,8 @@ const CardContainer = styled.div<StyledCardProps>`
   padding: 1rem;
   margin: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: ${props => (props.size === 'small' ? '80px' : '150px')}; /* Small or large width */
-  height: ${props => (props.size === 'small' ? '80px' : '150px')}; /* Small or large height */
+  width: ${props => (props.size === 'small' ? '100px' : '150px')}; /* Small or large width */
+  height: ${props => (props.size === 'small' ? '100px' : '150px')}; /* Small or large height */
   display: flex;
   justify-content: space-between;
   background-color: ${(props) => (props.disabled ? props.backgroundColor ||'#ccc' : '#fff')};
@@ -25,8 +25,9 @@ const CardContainer = styled.div<StyledCardProps>`
 `;
 
 const Image = styled.img`
-  width: 10%;
+  width: 100%;
   height: auto;
+  border-radius: 8px;
 `;
 
 const Content = styled.div`
@@ -34,8 +35,14 @@ const Content = styled.div`
 `;
 
 const Title = styled.h3`
-  margin: 0;
-  font-size: 1.5em;
+ margin-top: 6rem;
+  font-size: 1rem;
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Add pointer cursor to indicate it's clickable */
+  
+  &:hover {
+    color: #FF60CB; /* Add underline on hover */
+  }
 `;
 
 const Subtitle = styled.h4`
@@ -70,12 +77,14 @@ const Card = ({
   size,
 }: CardProps) => (
   <CardContainer data-testid="card-component" disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} size={size}>
-    {imageSrc && <Image src={cardImage} alt={description} data-testid="card-image"  />}
+    {imageSrc && <Image src={imageSrc} alt={description} data-testid="card-image"  />}
     <Content>
+      <a href={link} style={{ textDecoration: 'none' }}>
       <Title>{title}</Title>
+      </a>
       {subtitle && <Subtitle>{subtitle}</Subtitle>}
       <Description>{content}</Description>
-      <CardLink href={link}>Read More</CardLink> {/* Use link prop */}
+      <CardLink href={link}></CardLink> {/* Use link prop */}
     </Content>
   </CardContainer>
 );
