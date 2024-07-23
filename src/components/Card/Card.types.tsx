@@ -9,5 +9,7 @@ export interface CardProps {
     imageUrl?: string;
     backgroundColor?: string;
     'data-testid'?: string;
+    link: string;
+    size: 'small' | 'large'; 
   };
   

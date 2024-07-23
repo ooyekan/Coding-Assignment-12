@@ -16,7 +16,9 @@ describe('Card Component', () => {
     renderComponent({
       title: 'Test Title',
       content: 'This is the card content',
-      disabled: true, // Ensure the disabled state is applied correctly
+      disabled: true,
+      link: '',
+      size: 'small'
     });
 
     const cardElement = screen.getByTestId('card-component'); // Check the correct data-testid used
@@ -27,7 +29,9 @@ describe('Card Component', () => {
     renderComponent({
       title: 'Test Title',
       content: 'This is the card content',
-      hidden: true, // Ensure the hidden state is applied correctly
+      hidden: true,
+      link: '',
+      size: 'small'
     });
 
     const cardElement = screen.getByTestId('card-component'); // Check the correct data-testid used

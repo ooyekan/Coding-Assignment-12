@@ -1,11 +1,39 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Basic Reset and Full Viewport Settings */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
+body {
+  padding-top: 60px;
+  /* background-color: #001933; Height of the fixed header */
+}
+
+/* Root Container */
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+  min-height: 100vh; /* Ensure it takes full height */
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%; /* Ensure it takes full width */
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1; /* Allow this area to grow and fill the remaining space */
+  width: 100%;
+  max-width: 1000px; /* Limit max width for better readability */
+}
+
+/* Logo styles */
 .logo {
+  margin-right: auto;
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -18,6 +46,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Animation for logo */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +62,49 @@
   }
 }
 
+/* Card styling */
 .card {
   padding: 2em;
+  box-sizing: border-box;
+  width: 100%; /* Ensure cards take full width */
+  max-width: 600px; /* Limit max width for better readability */
 }
 
+/* Read the docs styling */
 .read-the-docs {
   color: #888;
+}
+
+/* Landscape Mode Specific Styles */
+@media (orientation: landscape) {
+  #root {
+    padding: 1rem; /* Adjust padding for landscape mode */
+  }
+
+  .card {
+    padding: 1.5em; /* Adjust card padding for landscape mode */
+  }
+
+  .logo {
+    height: 5em; /* Adjust logo height for landscape mode */
+  }
+}
+
+.hero-image {
+  width: 100%; /* Ensure the hero image spans the full width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.main-content {
+  padding: 2rem; /* Adjust padding as needed */
+}
+
+footer {
+  background-color: #282c34;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }

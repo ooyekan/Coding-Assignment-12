@@ -60,20 +60,55 @@
 // export default App
 
 import React from 'react';
+import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Projects from './Pages/Projects/Projects';
 import Contact from './Pages/Contact/Contact';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import IMG from './components/IMG/IMG'
+import styled from 'styled-components';
+
+
+// import Card from './components/Card/Card';
+// import Dropdown from './components/Dropdown/Dropdown';
+
+const AdditionalImage = styled(IMG)`
+  width: 80%;
+  max-width: 400px;
+  height: 10%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
 
 const App: React.FC = () => (
   <Router>
+    <Header
+      title="My Website"
+    />
+    
+    <main className="main-content">
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
+    {/* <div className="additional-components">
+        <Card title="Sample Card" description="This is a sample card description" content={''} />
+        <Dropdown options={['Option 1', 'Option 2', 'Option 3']} onSelect={function (): void {
+        throw new Error('Function not implemented.');
+      } } onChange={function (): void {
+        throw new Error('Function not implemented.');
+      } } />
+      </div> */}
+      
+      </main>
+      <AdditionalImage src="src/assets/images/img3.jpg" alt="Additional" />
+      <Footer /> {/* Include Footer component */}
   </Router>
 );
 

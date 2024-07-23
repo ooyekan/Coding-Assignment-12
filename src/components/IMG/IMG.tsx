@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 interface IMGProps {
   src: string;
   alt: string;
@@ -8,8 +9,8 @@ interface IMGProps {
 }
 
 const StyledIMG = styled.img<IMGProps>`
-  max-width: 100%;
-  height: auto;
+  width: 50%;
+  height: 15vh;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 `;
 

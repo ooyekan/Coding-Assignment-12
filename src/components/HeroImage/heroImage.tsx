@@ -27,7 +27,7 @@ const ImageWrapper = styled.div<StyledHeroImageProps>`
 `;
 
 const Image = styled.img`
-  width: 50%;
+  width: 30%;
   height: auto;
 `;
 

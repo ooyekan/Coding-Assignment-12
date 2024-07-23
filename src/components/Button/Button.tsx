@@ -10,10 +10,10 @@ interface StyledButtonProps {
 
 // Define a styled button component
 const StyledButton = styled.button<StyledButtonProps>`
-  background-color: ${props => props.disabled ? props.backgroundColor ||'#ccc' : '#4CAF50'}; /* Gray background for disabled, green for normal */
+  background-color: ${props => props.disabled ? props.backgroundColor ||'#ccc' : '#5156EC'}; /* Gray background for disabled, green for normal */
   border: none;              /* Remove borders */
   color: ${props => props.disabled ? '#666' : 'white'}; /* Gray text for disabled, white for normal */
-  padding: 15px 32px;        /* Some padding */
+  padding: 5px 10px;        /* Some padding */
   text-align: center;        /* Centered text */
   text-decoration: none;     /* Remove underline */
   display: ${props => props.hidden ? 'none' : 'inline-block'};
@@ -24,7 +24,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 
   /* Add a hover effect */
   &:hover {
-    background-color: ${props => props.disabled ? props.backgroundColor ||'#ccc' : '#45a049'};
+    background-color: ${props => props.disabled ? props.backgroundColor ||'#ccc' : 'pink'};
   }
 `;
 
@@ -32,10 +32,10 @@ export function sum(a: number, b: number) {
   return a + b;
  }
 
- const MyButton = ({ 'data-testid': dataTestId = 'MyButton', disabled = false, label = "I'm a button", backgroundColor, hidden, onClick }: MyButtonProps) => {
+ const MyButton = ({ 'data-testid': dataTestId = 'MyButton', disabled = false, label = "I'm a button", backgroundColor, hidden, onClick, children }: MyButtonProps) => {
   return (
     <StyledButton disabled={disabled} backgroundColor={backgroundColor} hidden={hidden} data-testid={dataTestId} onClick={!disabled ? onClick : undefined}>
-      {label}
+      {children || label} {/* Render children or label */}
     </StyledButton>
   );
 };

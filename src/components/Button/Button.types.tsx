@@ -5,4 +5,5 @@ export interface MyButtonProps {
     backgroundColor?: string;
     'data-testid'?: string;
     onClick?: () => void;
+    children?: React.ReactNode;
 }

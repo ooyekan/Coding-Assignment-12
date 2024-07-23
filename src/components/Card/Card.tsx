@@ -6,14 +6,20 @@ interface StyledCardProps {
   disabled?: boolean;
   hidden?: boolean;
   backgroundColor?: string;
+  size: 'small' | 'large';
 }
 
 const CardContainer = styled.div<StyledCardProps>`
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: ${props => (props.size === 'small' ? '80px' : '150px')}; /* Small or large width */
+  height: ${props => (props.size === 'small' ? '80px' : '150px')}; /* Small or large height */
+  display: flex;
+  justify-content: space-between;
   background-color: ${(props) => (props.disabled ? props.backgroundColor ||'#ccc' : '#fff')};
   border: 1px solid ${(props) => (props.disabled ? '#ccc' : '#ddd')};
-  border-radius: 8px;
-  padding: 5px;
-  margin: 5px;
   opacity: ${(props) => (props.disabled ? 0.6 : 1)};
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 `;
@@ -41,6 +47,16 @@ const Description = styled.p`
   margin-top: 8px;
   font-size: 1em;
 `;
+
+
+const CardLink = styled.a`
+  color: #007bff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const Card = ({
   disabled = false,
   hidden = false,
@@ -50,13 +66,16 @@ const Card = ({
   imageSrc,
   description,
   backgroundColor,
+  link,
+  size,
 }: CardProps) => (
-  <CardContainer data-testid="card-component" disabled={disabled} hidden={hidden} backgroundColor={backgroundColor}>
+  <CardContainer data-testid="card-component" disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} size={size}>
     {imageSrc && <Image src={cardImage} alt={description} data-testid="card-image"  />}
     <Content>
       <Title>{title}</Title>
       {subtitle && <Subtitle>{subtitle}</Subtitle>}
       <Description>{content}</Description>
+      <CardLink href={link}>Read More</CardLink> {/* Use link prop */}
     </Content>
   </CardContainer>
 );

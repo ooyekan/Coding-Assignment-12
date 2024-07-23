@@ -13,9 +13,17 @@ const Projects: React.FC = () => (
     <Header title={''} />
     <section>
       <h2>Projects</h2>
+      <div style={{ 
+      display: 'flex', 
+      flexDirection: 'row', 
+      flexWrap: 'wrap', 
+      gap: '1rem', 
+      padding: '1rem 0'
+    }}>
       {projects.map((project, index) => (
-        <Card content={''} key={index} {...project} />
+        <Card content={''} key={index} {...project} size="large"/>
       ))}
+      </div>
     </section>
   </>
 );
