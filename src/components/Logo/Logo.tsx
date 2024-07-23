@@ -1,16 +1,36 @@
 import React from 'react';
-import styled from 'styled-components';
-import logoImage from '../../assets/images/logo.png';
+import styled, { css } from 'styled-components';
+import { LogoProps } from './Logo.types';
+import defaultLogoImage from '../../assets/images/logo.png';
 
-// Styled-component for Logo
-const StyledLogo = styled.img`
-  height: 4em;  // Adjust height as needed
-  width: auto;  // Maintain aspect ratio
+interface StyledLogoProps {
+  disabled?: boolean;
+  hidden?: boolean;
+  backgroundColor?: string;
+}
+
+const LogoWrapper = styled.div<StyledLogoProps>`
+  display: ${({ hidden }) => (hidden ? 'none' : 'block')};
+  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
+  text-align: center;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.6;
+      cursor: not-allowed;
+    `}
 `;
 
-// Functional Component using Styled Logo
-const Logo: React.FC = () => (
-  <StyledLogo src={logoImage} alt="Logo" data-testid="logo-image"/>
+const StyledLogo = styled.img`
+  height: 4em;
+  width: auto;
+`;
+
+const Logo: React.FC<LogoProps> = ({ src = defaultLogoImage, alt = 'Logo', disabled, hidden, onClick, backgroundColor }) => (
+  <LogoWrapper disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} onClick={!disabled ? onClick : undefined} data-testid="logo-component">
+    <StyledLogo src={src} alt={alt} />
+  </LogoWrapper>
 );
 
 export default Logo;

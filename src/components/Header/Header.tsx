@@ -12,7 +12,7 @@ interface StyledHeaderProps {
 const HeaderWrapper = styled.header<StyledHeaderProps>`
   width: 100%;
   padding: 1rem 2rem; /* Adjust padding as needed */
-  background-color: ${(props) => (props.disabled ? '#ccc' : props.backgroundColor || '#282c34')};
+  background-color: ${({ backgroundColor }) => backgroundColor || '#282c34'};
   color: #fff;
   display: flex;
   align-items: center;
@@ -27,6 +27,14 @@ const HeaderWrapper = styled.header<StyledHeaderProps>`
     css`
       display: none;
     `}
+
+    ${({ disabled }) =>
+      disabled &&
+      css`
+        background-color: #ccc; /* Change background color for disabled state */
+        opacity: 0.6; /* Reduce opacity for disabled state */
+        cursor: not-allowed; /* Change cursor for disabled state */
+      `}
 `;
 
 const LogoWrapper = styled.div`

@@ -21,7 +21,8 @@
       "^.+\\.(t|j)sx?$": "babel-jest"
     },
     "moduleNameMapper": {
-      ".(css|less|scss)$": "identity-obj-proxy"
+      ".(css|less|scss)$": "identity-obj-proxy",
+      "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/_mocks_/fileMock.js"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.js"

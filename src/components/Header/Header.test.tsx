@@ -31,12 +31,14 @@ describe('Header Component', () => {
     renderComponent();
     expect(screen.getByText('Header Title')).toBeInTheDocument();
     expect(screen.getByText('Header Subtitle')).toBeInTheDocument();
+    expect(screen.getByTestId('logo-component')).toBeInTheDocument();
   });
 
   test('renders without subtitle', () => {
     renderComponent({ subtitle: undefined });
     expect(screen.getByText('Header Title')).toBeInTheDocument();
     expect(screen.queryByText('Header Subtitle')).not.toBeInTheDocument();
+    expect(screen.getByTestId('logo-component')).toBeInTheDocument();
   });
 
   test('renders as hidden', () => {
