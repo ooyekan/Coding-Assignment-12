@@ -9,6 +9,10 @@ const AboutContainer = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center;
+
+  @media (max-width: 768px) {
+    margin-top: 5rem;
+  }
 `;
 
 // Styled component for the heading

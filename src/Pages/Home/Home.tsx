@@ -27,6 +27,10 @@ const HeroSection = styled.div`
   text-align: center;
   margin-bottom: 2rem;
   height: 100px; 
+
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 
@@ -39,6 +43,12 @@ const InfoSection = styled.div`
   margin-bottom: 2rem;
   width: 100%;
   padding-top: 6rem;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    padding-top: 2rem;
+    margin-top: 25rem;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -49,6 +59,19 @@ const TextContainer = styled.div`
   border-bottom: 8px solid white; /* Thickness and color of the bottom line */
   border-radius: 4px;
  
+  @media (max-width: 768px) {
+    text-align: center;
+    padding-top: 2rem;
+    margin-right: 0;
+    margin-top: 4em;
+    margin-bottom: 2rem; /* Add margin-bottom to separate text from image */
+  }
+
+  // & > MyText {
+  //   @media (max-width: 768px) {
+  //     size: 'medium'; /* Adjust this value as needed for medium text size */
+  //   }
+  // }
 `;
 
 const ButtonContainer = styled.div`
@@ -61,6 +84,14 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media (max-width: 768px) {
+    position: static;
+    transform: none;
+    align-items: center;
+    text-align: center;
+    margin-top: 4em;
+  }
 `;
 
 const ProjectsSection = styled.section`
@@ -69,6 +100,10 @@ const ProjectsSection = styled.section`
   padding: 2rem;
   background-color: #2A2B32; 
   // #000033;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const ProjectsContainer = styled.section`
@@ -78,6 +113,10 @@ const ProjectsContainer = styled.section`
   flex-wrap: wrap;
   gap: 1rem; /* Add gap between cards */
   
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const ProjectLink = styled.a`

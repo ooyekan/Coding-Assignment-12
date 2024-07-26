@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    display: none; /* Hide the navigation bar on mobile */
+  }
 `;
 
 const NavigationBar: React.FC = () => (

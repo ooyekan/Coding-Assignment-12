@@ -9,6 +9,10 @@ const FooterWrapper = styled.footer`
   position: relative;
   bottom: 0;
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem;
+  }
 `;
 
 const SocialLinks = styled.div`
@@ -17,11 +21,21 @@ const SocialLinks = styled.div`
     color: #61dafb;
     margin: 0 1rem;
     text-decoration: none;
+  @media (max-width: 768px) {
+      margin: 0 0.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin: 0.5rem 0;
   }
 `;
 
 const FooterText = styled.p`
   margin: 0;
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+  }
 `;
 
 const Footer: React.FC = () => (
@@ -33,7 +47,7 @@ const Footer: React.FC = () => (
       <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
       <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </SocialLinks>
-    <FooterText>© 2024 My Website. All rights reserved.</FooterText>
+    <FooterText>© 2024 My Portfolio. All rights reserved.</FooterText>
   </FooterWrapper>
 );
 

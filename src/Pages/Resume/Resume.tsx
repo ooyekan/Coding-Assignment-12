@@ -8,6 +8,7 @@ const ResumeContainer = styled.section`
   max-width: 800px;
   margin: 0 auto;
   height: 100%
+  margin-top: 20rem;
 `;
 
 const SectionTitle = styled.h1`

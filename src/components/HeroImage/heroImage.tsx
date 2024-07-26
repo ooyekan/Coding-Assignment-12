@@ -29,6 +29,11 @@ const ImageWrapper = styled.div<StyledHeroImageProps>`
 const Image = styled.img`
   width: 30%;
   height: auto;
+  max-height: 400px; /* Adjust as needed */
+
+  @media (max-width: 768px) {
+    width: 70%; /* Adjust for smaller screens */
+  }
 `;
 
 const HeroImage = ({ src = heroImage, alt, disabled, hidden, onClick,
