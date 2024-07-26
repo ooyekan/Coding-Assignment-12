@@ -1,4 +1,6 @@
 import type { Preview } from "@storybook/react";
+import RouterDecorator from '../src/decorators/RouterDecorator';
+
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +11,7 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [RouterDecorator],
 };
 
 export default preview;

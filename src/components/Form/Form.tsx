@@ -4,12 +4,16 @@ import SubmitButton from '../SubmitButton/SubmitButton';
 import { SubmitButtonProps } from '../SubmitButton/SubmitButton.types';
 import { FormProps } from './Form.types';
 
-const FormContainer = styled.form`
+
+
+const FormContainer = styled.form<{ disabled: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
   margin-top: 3rem;
+
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 `;
 
 const InputField = styled.input`
@@ -29,7 +33,7 @@ const TextAreaField = styled.textarea`
   width: 350px;
 `;
 
-const Form: React.FC<FormProps> = ({ initialName = '', initialEmail = '', initialEnquiry = '', onSubmit }) => {
+const Form: React.FC<FormProps> = ({ initialName = '', initialEmail = '', initialEnquiry = '', onSubmit , disabled = false}) => {
   const [name, setName] = useState(initialName);
   const [email, setEmail] = useState(initialEmail);
   const [enquiry, setEnquiry] = useState(initialEnquiry);
@@ -47,25 +51,28 @@ const Form: React.FC<FormProps> = ({ initialName = '', initialEmail = '', initia
   };
 
   return (
-    <FormContainer>
+    <FormContainer disabled={disabled}>
       <InputField 
         type="text" 
         placeholder="Your Name" 
         value={name} 
         onChange={(e) => setName(e.target.value)} 
+        disabled={disabled}
       />
       <InputField 
         type="email" 
         placeholder="Your Email" 
         value={email} 
         onChange={(e) => setEmail(e.target.value)} 
+        disabled={disabled}
       />
       <TextAreaField 
         placeholder="Your Enquiry" 
         value={enquiry} 
         onChange={(e) => setEnquiry(e.target.value)} 
+        disabled={disabled}
       />
-      <SubmitButton onClick={handleSubmit}>Submit</SubmitButton>
+      <SubmitButton onClick={handleSubmit} disabled={disabled}>Submit</SubmitButton>
       {submissionStatus && <p>{submissionStatus}</p>}
     </FormContainer>
   );

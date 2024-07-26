@@ -11,7 +11,7 @@ interface StyledLogoProps {
 
 const LogoWrapper = styled.div<StyledLogoProps>`
   display: ${({ hidden }) => (hidden ? 'none' : 'block')};
-  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
+  background-color: ${({ backgroundColor }) => backgroundColor || 'none'};
   text-align: center;
 
   ${({ disabled }) =>

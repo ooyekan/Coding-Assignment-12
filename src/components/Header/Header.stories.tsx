@@ -2,7 +2,6 @@ import { StoryFn, Meta } from '@storybook/react';
 import { userEvent, within } from '@storybook/test';
 import Header from './Header';
 import { HeaderProps } from './Header.types';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
   title: 'ReactComponentLibrary/Header',
@@ -14,11 +13,7 @@ export default {
   },
 } as Meta<typeof Header>;
 
-const Template: StoryFn<HeaderProps> = (args) => (
-  <Router>
-    <Header {...args} />
-  </Router>
-);
+const Template: StoryFn<HeaderProps> = (args) => <Header {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -49,11 +44,11 @@ WithoutSubtitle.play = async ({ canvasElement }) => {
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-    title: 'Header Title',
-    subtitle: 'Header Subtitle',
-    disabled: true,
-    hidden: false,
-    'data-testid': 'header-component',
+  title: 'Header Title',
+  subtitle: 'Header Subtitle',
+  disabled: true,
+  hidden: false,
+  'data-testid': 'header-component',
 };
 
 Disabled.play = async ({ canvasElement }) => {

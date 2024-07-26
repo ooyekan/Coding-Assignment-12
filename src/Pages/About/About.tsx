@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import AboutMe from '../../components/Header/AboutMe';
+import AboutMe from '../../components/AboutMe/AboutMe';
 
 const About: React.FC = () => (
   <>
