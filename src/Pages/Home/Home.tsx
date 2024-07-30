@@ -149,7 +149,7 @@ const Home: React.FC = () => (
       <HeroSection>
     
       {/* HeroImage Component */}
-      <HeroImage src = "src/assets/images/hero_Image.png" alt="Hero Image" title="Hero Title" subtitle="Hero Subtitle" />
+      <HeroImage src = "/hero_Image.png" alt="Hero Image" title="Hero Title" subtitle="Hero Subtitle" />
     </HeroSection>
 
       {/* MyButton Component */}

@@ -1,7 +1,7 @@
 //import styled from 'styled-components';
 import styled, { css } from 'styled-components';
 import { HeroImageProps } from './heroImage.types';
-import heroImage from '../../assets/images/hero_Image.png';
+// import heroImage from '../../public/hero_Image.png';
 
 interface StyledHeroImageProps{
   disabled?: boolean;
@@ -36,7 +36,7 @@ const Image = styled.img`
   }
 `;
 
-const HeroImage = ({ src = heroImage, alt, disabled, hidden, onClick,
+const HeroImage = ({ src, alt, disabled, hidden, onClick,
   backgroundColor, }: HeroImageProps) => (
   <ImageWrapper disabled={disabled} hidden={hidden} backgroundColor={backgroundColor} onClick={!disabled ? onClick : undefined} data-testid="heroimage-component">
     <Image src={src} alt={alt} />

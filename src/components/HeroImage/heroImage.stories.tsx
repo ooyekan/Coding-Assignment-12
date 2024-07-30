@@ -2,7 +2,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { userEvent, within } from '@storybook/test';
 import HeroImage from './heroImage';
 import { HeroImageProps } from './heroImage.types';
-import heroImage from '../../assets/images/hero_Image.png'; 
+// import heroImage from './public/hero_Image.png'; 
 
 export default {
   title: 'ReactComponentLibrary/HeroImage',
@@ -27,7 +27,7 @@ const Template: StoryFn<HeroImageProps> = (args) => <HeroImage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  src: heroImage,
+  src: '/hero_Image.png',
   alt: 'hero image',
   title: 'Hero Title',
   subtitle: 'Hero Subtitle',
@@ -46,7 +46,7 @@ Default.play = async ({ canvasElement }) => {
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  src: heroImage,
+  src: '/hero_Image.png',
   alt: 'hero image',
   title: 'Hero Title',
   subtitle: 'Hero Subtitle',

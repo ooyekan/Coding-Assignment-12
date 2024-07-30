@@ -108,7 +108,7 @@ const App: React.FC = () => (
       </div> */}
       
       </main>
-      <AdditionalImage src="src/assets/images/img.jpg" alt="Additional" />
+      <AdditionalImage src="/img.jpg" alt="Additional" />
       <Footer /> {/* Include Footer component */}
   </Router>
 );
