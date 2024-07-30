@@ -4,13 +4,14 @@ import Card from '../../components/Card/Card';
 import MyText from '../../components/Text/text';
 import MyButton from '../../components/Button/Button'; // Import MyButton
 import styled from 'styled-components';
+import HeaderLink from '../../components/HeaderLink/HeaderLink';
 
 
 
 const projects = [
-  { title: 'CMS', description: 'Description for project one', link: '#', imageSrc: 'src/assets/images/cardImage1.png' },
-  { title: 'Portfolio', description: 'Description for project two', link: '#', imageSrc: 'src/assets/images/cardImage2.png' },
-  { title: 'E-Commerce', description: 'Description for project three', link: '#', imageSrc: 'src/assets/images/cardImage3.png' },
+  { title: 'CMS', description: 'Description for project one', link: '#', imageSrc: '/cardImage1.png' },
+  { title: 'Portfolio', description: 'Description for project two', link: '#', imageSrc: '/cardImage2.png' },
+  { title: 'E-Commerce', description: 'Description for project three', link: '#', imageSrc: '/cardImage3.png' },
 ];
 
 const Container = styled.div`
@@ -128,14 +129,7 @@ const ProjectLink = styled.a`
   }
 `;
 
-const HeaderLink = styled.a`
-  color: #fff; /* White color for the link text */
-  text-decoration: none; /* Remove underline */
-  
-  &:hover {
-    color: #FFC0CB; /* Change color on hover */ 
-  }
-`;
+
 
 
 const Home: React.FC = () => (
