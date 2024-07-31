@@ -61,7 +61,7 @@
 
 import React from 'react';
 import './App.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Projects from './Pages/Projects/Projects';
@@ -108,7 +108,7 @@ const App: React.FC = () => (
       </div> */}
       
       </main>
-      <AdditionalImage src="/img.jpg" alt="Additional" />
+      <AdditionalImage src="./img.jpg" alt="Additional" />
       <Footer /> {/* Include Footer component */}
   </Router>
 );

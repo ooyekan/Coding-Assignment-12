@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import Header from './Header';
 import { HeaderProps } from './Header.types';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 global.React = React;
 
