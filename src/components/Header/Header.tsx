@@ -4,6 +4,9 @@ import { HeaderProps } from './Header.types';
 import Logo from '../Logo/Logo';
 import NavigationBar from '../NavigationBar/NavigationBar';
 import Dropdown from '../Dropdown/Dropdown';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 interface StyledHeaderProps {
@@ -84,6 +87,7 @@ const MobileNavList = styled.div`
 
 const Header = ({ subtitle, disabled, backgroundColor, onClick, hidden }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -92,22 +96,22 @@ const Header = ({ subtitle, disabled, backgroundColor, onClick, hidden }: Header
   const handleDropdownSelect = (option: string) => {
     switch (option) {
       case 'Home':
-        window.location.href = '/';
+        navigate('/');
         break;
       case 'About':
-        window.location.href = '/about';
+        navigate('/about');
         break;
-      case 'Projects':
-        window.location.href = '/projects';
-        break;
-      case 'Contact':
-        window.location.href = '/contact';
-        break;
-      case 'Resume':
-        window.location.href = '/resume';
-        break;
-      default:
-        break;
+        case 'Projects':
+          navigate('/projects');
+          break;
+        case 'Contact':
+          navigate('/contact');
+          break;
+        case 'Resume':
+          navigate('/resume');
+          break;
+        default:
+          break;
     }
     setIsMobileMenuOpen(false);
   };
