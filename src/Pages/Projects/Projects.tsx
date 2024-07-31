@@ -4,9 +4,9 @@ import Card from '../../components/Card/Card';
 import styled from 'styled-components';
 
 const projects = [
-  { title: 'CMS', description: 'A robust CMS designed to simplify content creation and management for websites, providing an intuitive interface for users to publish and edit content effortlessly.', link: '#', imageSrc: '/cardImage1.png' },
-  { title: 'Portfolio', description: 'A dynamic portfolio website showcasing your work and skills with a visually appealing design, allowing visitors to explore your projects and achievements.', link: '#', imageSrc: '/cardImage2.png' },
-  { title: 'E-Commerce', description: 'A comprehensive e-commerce platform offering seamless online shopping experiences, complete with product listings, shopping cart functionality, and secure checkout options.', link: '#', imageSrc: '/cardImage3.png' },
+  { title: 'CMS', description: 'A robust CMS designed to simplify content creation and management for websites, providing an intuitive interface for users to publish and edit content effortlessly.', link: '#', imageSrc: './cardImage1.png' },
+  { title: 'Portfolio', description: 'A dynamic portfolio website showcasing your work and skills with a visually appealing design, allowing visitors to explore your projects and achievements.', link: '#', imageSrc: './cardImage2.png' },
+  { title: 'E-Commerce', description: 'A comprehensive e-commerce platform offering seamless online shopping experiences, complete with product listings, shopping cart functionality, and secure checkout options.', link: '#', imageSrc: './cardImage3.png' },
 ];
 
 const Container = styled.div`
