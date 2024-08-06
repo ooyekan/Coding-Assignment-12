@@ -9,9 +9,9 @@ import HeaderLink from '../../components/HeaderLink/HeaderLink';
 
 
 const projects = [
-  { title: 'CMS', description: 'Description for project one', link: '#', imageSrc: './cardImage1.png' },
-  { title: 'Portfolio', description: 'Description for project two', link: '#', imageSrc: './cardImage2.png' },
-  { title: 'E-Commerce', description: 'Description for project three', link: '#', imageSrc: './cardImage3.png' },
+  { title: 'CMS', description: 'Description for project one', link: 'https://github.com/ooyekan/Web-Dev-2-Project.git', imageSrc: './cardImage1.png' },
+  { title: 'Portfolio', description: 'Description for project two', link: 'https://github.com/ooyekan/Coding-Assignment-12.git', imageSrc: './cardImage2.png' },
+  { title: 'E-Commerce', description: 'Description for project three', link: 'https://github.com/ooyekan/wale_pharmacy_and_supermarket.git', imageSrc: './cardImage3.png' },
 ];
 
 const Container = styled.div`
